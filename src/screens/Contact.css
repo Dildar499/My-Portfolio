@@ -1,0 +1,141 @@
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-icon {
+  width: 70px;
+  min-width: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: #00c0ff;
+  height: 70px;
+  align-items: center;
+  margin: 0;
+  border-radius: 50px;
+}
+
+.Short {
+  flex: 1;
+}
+
+.Short h3 {
+  margin: 0 0 12px;
+}
+
+.Short span {
+  font-size: 20px;
+  color: grey;
+}
+
+.short a {
+  font-size: 30px;
+}
+
+.listContact {
+  margin: 100px 0;
+}
+
+.input-fields input {
+  padding: 10px 20px;
+  margin: 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 18px;
+  background-color: transparent;
+  color: grey;
+  width: 100%;
+  border-radius: 25px;
+}
+.input-fields input:focus{
+  outline: none;
+}
+
+.textArea {
+  padding: 10px 20px;
+  margin: 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 18px;
+  background-color: transparent;
+  color: grey;
+  width: 100%;
+  border-radius: 20px;
+}
+.textArea:focus{
+  outline: none;
+}
+
+@media (min-width: 576px) {
+  .input-fields {
+    width: 100%;
+  }
+
+  .textArea {
+    width: 100%;
+  }
+}
+
+.newsLetter {
+  background-color: hsl(253, 45%, 31%);
+  padding: 50px 50px;
+  height: 100%;
+}
+
+@media screen and(min-width:786) and (max-width: 1024) {
+  .newsLetter {
+    height: 100%
+  }
+}
+
+.textContent {
+  display: flex;
+  justify-items: center;
+  margin: 20px 0px;
+  font-size: 20px;
+}
+
+.textContent input {
+  padding: 20px 10px;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  border-style: none;
+  outline: none;
+  color: grey;
+}
+
+.textContent input:focus {
+  outline: none;
+}
+
+.textContent button {
+  padding: 20px 15px;
+  border-radius: 0 20px 20px 0;
+  border: none;
+  background-color: #00c0ff;
+  color: white;
+}
+
+.input-fields button {
+  padding: 10px 20px;
+  margin: 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 18px;
+  background-color: transparent;
+  color: grey;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.input-fields button:hover {
+  background-color: #00c0ff;
+  outline: none;
+  box-shadow: none;
+  transition: 1s ease-in-out;
+}

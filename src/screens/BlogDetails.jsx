@@ -1,0 +1,116 @@
+import { useParams } from "react-router-dom";
+
+function BlogDetails() {
+
+  const { id } = useParams();
+
+  const blogs = [
+    // Use the SAME three blog objects here,
+    {
+      id: 1,
+      title: "Learn React JS",
+      description: "Learn React JS from beginner to advanced.",
+      image: "https://images.unsplash.com/photo-1687603921109-46401b201195?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      author: "Dildar Hussain",
+      date: "November 09, 2026",
+      content: `React is a popular JavaScript library used to build modern and interactive user interfaces. It allows developers to create reusable UI components, making applications easier to develop and maintain.
+
+React uses JSX, which allows developers to write HTML-like syntax inside JavaScript. It also provides powerful features such as components, props, state, and hooks.
+
+Some important React concepts include:
+
+1. Components: Reusable building blocks of a React application.
+2. JSX: HTML-like syntax used inside JavaScript.
+3. Props: Used to pass data between components.
+4. useState: Used to manage component state.
+5. useEffect: Used to handle side effects.
+
+React is widely used for building single-page applications, dashboards, e-commerce websites, and many other modern web applications.`,
+    },
+
+    {
+      id: 2,
+      title: "Learn JavaScript",
+      description: "Understand JavaScript fundamentals.",
+      image: "https://plus.unsplash.com/premium_photo-1678565879444-f87c8bd9f241?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      author: "Dildar Hussain",
+      date: "November 09, 2026",
+      content: `JavaScript is a powerful programming language used to make websites interactive and dynamic. It works alongside HTML and CSS to create modern web experiences.
+
+JavaScript allows developers to handle user interactions, validate forms, update website content, and communicate with servers.
+
+Some important JavaScript concepts include:
+
+1. Variables: Used to store data.
+2. Functions: Used to organize reusable code.
+3. Arrays: Used to store multiple values.
+4. Objects: Used to organize data in key-value pairs.
+5. DOM Manipulation: Used to change HTML elements dynamically.
+6. Events: Used to handle user actions such as clicks.
+7. ES6 Features: Includes arrow functions, destructuring, spread operators, and more.
+
+JavaScript is also used with technologies like React, Node.js, and Express.js to build complete web applications.`,
+    },
+
+    {
+      id: 3,
+      title: "Learn Bootstrap",
+      description: "Build responsive websites with Bootstrap.",
+      image: "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      author: "Dildar Hussain",
+      date: "November 09, 2026",
+      content: `Bootstrap is a popular frontend CSS framework used to build responsive and mobile-friendly websites quickly.
+
+It provides ready-made CSS classes and components that help developers create professional website layouts without writing all the CSS from scratch.
+
+Some important Bootstrap features include:
+
+1. Grid System: Create responsive layouts using rows and columns.
+2. Containers: Organize and align website content.
+3. Buttons: Create attractive buttons using predefined classes.
+4. Navbar: Build responsive navigation bars.
+5. Cards: Display content in organized card layouts.
+6. Forms: Create styled input fields and forms.
+7. Utilities: Manage spacing, colors, display, and alignment.
+
+Bootstrap is especially useful for quickly building responsive websites and frontend projects. It works well with React, HTML, CSS, and JavaScript.`,
+    },
+    // including their content properties.
+  ];
+
+  const selectedBlog = blogs.find(
+    (blog) => blog.id === Number(id)
+  );
+
+  if (!selectedBlog) {
+    return <h2 className="text-center mt-5">Blog Not Found</h2>;
+  }
+
+  return (
+    <div className="container mt-5">
+
+      <h1 className="text-info">{selectedBlog.title}</h1>
+      
+      <p className="text-light">
+        By {selectedBlog.author} | {selectedBlog.date}
+      </p>
+
+      <img
+        src={selectedBlog.image}
+        alt={selectedBlog.title}
+        className="img-fluid rounded mb-4"
+        style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }}
+      />
+
+      <p>{selectedBlog.description}</p>
+
+      <div style={{ whiteSpace: "pre-line", lineHeight: "1.5" }}>
+        {selectedBlog.content}
+      </div>
+
+    </div>
+  );
+
+}
+
+export default BlogDetails;

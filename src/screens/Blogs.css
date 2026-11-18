@@ -1,0 +1,14 @@
+.Blog-card {
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  background-color: hsl(253, 45%, 31%);
+  border: none;
+  border-radius:22px;
+
+}
+
+.Blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  
+}

@@ -1,0 +1,32 @@
+.card1{
+    background-color: #00c0ff;
+    height:100%;
+    cursor: pointer;
+    background-color: #3a2b71;
+    text-align: center;
+    padding: 40px 40px;
+    border: none;
+    border-radius: 20px;
+    
+}
+.card1:hover{
+    transform: translateY(-0.5rem);
+    transition: 2s ease-in-out;
+}
+.card1 h2{
+    padding: 20px 0px;
+}
+
+.card1 p{
+    color: grey;
+}
+.card-products{
+    margin: 80px 0px;
+}
+
+@media (min-width: 576px) {
+    .card1{
+        height: 100%;
+    }
+    
+ }
