@@ -4,22 +4,22 @@ function Contact() {
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [subject , setSubject] = useState("");
-  const [message , setMessage] = useState("");
-  const [success , setSuccess] = useState("");
-  const [email1 , setEmail1] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState("");
+  const [email1, setEmail1] = useState("");
 
-  const HandleForm = (e)=>{
+  const HandleForm = (e) => {
     e.preventDefault();
 
-   setSuccess("Send Successfully")
+    setSuccess("Send Successfully");
 
     setText("");
     setEmail("");
     setPhone("");
     setSubject("");
     setMessage("");
-  }
+  };
   return (
     <>
       <div className="container text-center">
@@ -45,7 +45,14 @@ function Contact() {
 
                 <div className="Short">
                   <h3>Address</h3>
-                  <a className="text-decoration-none text-secondary fs-5" href="https://maps.app.goo.gl/aeCFerfHN9EBR9DeA" target="_blank" rel="noreferrer">Azaan City, Sahiwal</a>
+                  <a
+                    className="text-decoration-none text-secondary fs-5"
+                    href="https://maps.app.goo.gl/aeCFerfHN9EBR9DeA"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Azaan City, Sahiwal
+                  </a>
                 </div>
               </li>
 
@@ -63,7 +70,14 @@ function Contact() {
 
                 <div className="Short">
                   <h3>Email</h3>
-                  <a className="text-decoration-none text-secondary fs-5" href="mailto: webtech754@gmail.com" target="_blank" rel="nore noreferrer">webtech754@gmail.com</a>
+                  <a
+                    className="text-decoration-none text-secondary fs-5"
+                    href="mailto: webtech754@gmail.com"
+                    target="_blank"
+                    rel="nore noreferrer"
+                  >
+                    webtech754@gmail.com
+                  </a>
                 </div>
               </li>
 
@@ -81,7 +95,14 @@ function Contact() {
 
                 <div className="Short">
                   <h3>WhatsApp</h3>
-                  <a className="text-decoration-none text-secondary fs-5" href="https://wa.me/923266504035" target="_blank" rel="noreferrer">+92-326650403-5</a>
+                  <a
+                    className="text-decoration-none text-secondary fs-5"
+                    href="https://wa.me/923266504035"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    +92-326650403-5
+                  </a>
                 </div>
               </li>
             </ul>
@@ -89,55 +110,91 @@ function Contact() {
           <div className="col-md-6 col-12">
             <form onSubmit={HandleForm}>
               <div className="input-fields">
-              <input type="text" placeholder="Your Name" value={text} onChange={(e)=>{
-                setText(e.target.value)
-              }} required/>
-              <input type="email" placeholder="Your Email" value={email} onChange={(e)=>{
-                setEmail(e.target.value)
-              }} required />
-              <input type="text" placeholder="Your Phone" value={phone} onChange={(e)=>{
-                setPhone(e.target.value)
-              }} required />
-              <input type="text" placeholder="Your Subject" value={subject} onChange={(e)=>{
-                setSubject(e.target.value)
-              }} required />
-              <textarea
-                name=""
-                id="textArea"
-                placeholder="Your Message.."
-                className="textArea"
-                value={message}
-                onChange={(e)=>{
-                  setMessage(e.target.value)
-                }}
-              required ></textarea>
-              <button type="submit" className="btn input-fields button ">{success ? "Message Send" : "Click to Send"}</button>
-            </div>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  value={text}
+                  onChange={(e) => {
+                    setText(e.target.value);
+                  }}
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Your Phone"
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Your Subject"
+                  value={subject}
+                  onChange={(e) => {
+                    setSubject(e.target.value);
+                  }}
+                  required
+                />
+                <textarea
+                  name=""
+                  id="textArea"
+                  placeholder="Your Message.."
+                  className="textArea"
+                  value={message}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                  }}
+                  required
+                ></textarea>
+                <button type="submit" className="btn input-fields button  " style={{backgroundColor: success ? 'green': '', color: 'white'}}>
+                  {success ? "Message Send" : "Click to Send"}
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
 
       <div className="container-fluid newsLetter">
-        <div className="row gy-4">
-          <div className="col-lg-6 col-md-6 col-12">
-            <div className="container" style={{paddingLeft:'80px',margin:'10px 0px'}}>
-              <h4 className="fw-light" style={{color:'#00c0ff'}}>Subscribe Now</h4>
-              <h1>Get My Newsletter</h1>
-              <p className="text-secondary">Get latest news, tips and trics in your inbox</p>
+        <section className="newsletter-section">
+          <div className="container">
+            <div className="row align-items-center gy-4">
+              {/* Newsletter Content */}
+              <div className="col-12 col-lg-6">
+                <div className="newsletter-content">
+                  <h4 className="text-info">Subscribe Now</h4>
+                  <h1>Get My Newsletter</h1>
+                  <p className="text-secondary">Get latest news, tips and trics in your inbox</p>
+                </div>
+              </div>
+
+              {/* Email Input */}
+              <div className="col-12 col-lg-6">
+                <div className="textContent">
+                  <input
+                    type="email"
+                    placeholder="Your email here"
+                    value={email1}
+                    onChange={(e) => setEmail1(e.target.value)}
+                  />
+
+                  <button onClick={() => setEmail1("")}>Send Now</button>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-6 col-12">
-            <div className=" textContent">
-              <input type="email" placeholder="Your email here" value={email1} onChange={(e)=>{
-                setEmail1(e.target.value)
-              }} />
-              <button onClick={()=>{
-                setEmail1("");
-              }}>Send Now</button>
-            </div>
-          </div>
-        </div>
+        </section>
       </div>
     </>
   );

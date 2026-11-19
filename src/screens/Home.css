@@ -1,3 +1,8 @@
+
+/* =========================
+   HOME SECTION
+========================= */
+
 .home-section {
   min-height: 75vh;
   display: flex;
@@ -6,14 +11,15 @@
 }
 
 .profile-image {
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  max-width: 100%;
 }
 
 .home-title {
-  font-size: 42px;
+  font-size: clamp(27px, 4vw, 42px);
 }
 
 .home-description {
@@ -22,83 +28,142 @@
   max-width: 600px;
 }
 
-/* Tablet */
-@media (max-width: 768px) {
+/* =========================
+   COLOR PICKER / CARDS
+========================= */
+
+.color-picker {
+  background-color: #3a2b71;
+  border-radius: 15px;
+  padding: 0 15px;
+  height: 100%;
+  min-height: 350px;
+}
+
+.heading-name {
+  color: white;
+  padding: 15px 0;
+}
+
+.paragraph {
+  color: grey;
+  letter-spacing: 1px;
+}
+
+.my-box {
+  height: 100%;
+   transform: translateY(0);
+   transition: transform 0.5s ease-in-out;
+   cursor: pointer;
+}
+
+.my-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.next-section {
+  margin-bottom: 15px;
+}
+
+/* =========================
+   SVG RESPONSIVENESS
+========================= */
+
+.my-box svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   TABLET / IPAD
+========================= */
+
+@media screen and (max-width: 1024px) {
+
+  .home-section {
+    min-height: auto;
+  }
+
+  .profile-image {
+    max-width: 350px;
+    height: 350px;
+  }
+
+  .image-sections {
+    width: 100%;
+    min-height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .home-title {
     font-size: 32px;
   }
-
-
 
   .home-description {
     font-size: 16px;
   }
 }
 
-/* Mobile */
-@media (max-width: 576px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 576px) {
+
   .home-section {
     min-height: auto;
     padding-top: 30px !important;
     padding-bottom: 40px !important;
   }
 
-  .home-title {
-    font-size: 27px;
+  .profile-image {
+    max-width: 260px;
+    max-height: 260px;
   }
 
-  .profile-image {
-    width: 180px;
-    height: 180px;
+  .image-sections {
+    min-height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-title {
+    font-size: 27px;
   }
 
   .home-description {
     font-size: 14px;
     line-height: 1.7;
   }
-}
-.color-picker{
-  background-color: #3a2b71;
-  border-radius: 15px;
-  padding: 0 15px;
-}
-.heading-name{
- color:white;
- padding: 15px 0px;
-}
-.paragraph{
-  color: grey;
-  letter-spacing: 1;
-}
-.my-box{
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-.my-box:hover{
-   transform:translateY(-0.9rem);
-   transition: 1s ease-in-out;
-   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-}
-.next-section{
-  margin-bottom: 15px;
+
+  .color-picker {
+    min-height: 320px;
+    padding: 30px 20px;
+  }
+
+  .my-box:hover {
+    transform: translateY(-5px);
+  }
 }
 
-/* Tablet / iPad */
-@media screen and (min-width: 577px) and (max-width: 1024px) {
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media screen and (max-width: 375px) {
 
   .profile-image {
-    width: 350px !important;
-    height: 350px !important;
-    object-fit: cover;
+    max-width: 220px;
   }
 
-  .image-sections {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .home-title {
+    font-size: 24px;
   }
 
+  .color-picker {
+    padding: 25px 15px;
+  }
 }

@@ -5,12 +5,12 @@ function BlogDetails() {
   const { id } = useParams();
 
   const blogs = [
-    // Use the SAME three blog objects here,
     {
       id: 1,
       title: "Learn React JS",
       description: "Learn React JS from beginner to advanced.",
-      image: "https://images.unsplash.com/photo-1687603921109-46401b201195?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      image:
+        "https://images.unsplash.com/photo-1687603921109-46401b201195?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
       author: "Dildar Hussain",
       date: "November 09, 2026",
       content: `React is a popular JavaScript library used to build modern and interactive user interfaces. It allows developers to create reusable UI components, making applications easier to develop and maintain.
@@ -32,7 +32,8 @@ React is widely used for building single-page applications, dashboards, e-commer
       id: 2,
       title: "Learn JavaScript",
       description: "Understand JavaScript fundamentals.",
-      image: "https://plus.unsplash.com/premium_photo-1678565879444-f87c8bd9f241?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      image:
+        "https://plus.unsplash.com/premium_photo-1678565879444-f87c8bd9f241?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
       author: "Dildar Hussain",
       date: "November 09, 2026",
       content: `JavaScript is a powerful programming language used to make websites interactive and dynamic. It works alongside HTML and CSS to create modern web experiences.
@@ -54,9 +55,87 @@ JavaScript is also used with technologies like React, Node.js, and Express.js to
 
     {
       id: 3,
+      title: "Learn Express.js",
+      description: "Build powerful backend applications using Express.js.",
+      image:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=870&auto=format&fit=crop",
+      author: "Dildar Hussain",
+      date: "November 12, 2026",
+      content: `Express.js is a popular backend framework built on top of Node.js. It makes it easier to create web servers, APIs, and backend applications using JavaScript.
+
+Express.js helps developers handle HTTP requests, manage routes, process data, and connect applications with databases.
+
+Some important Express.js concepts include:
+
+1. Routing: Used to define different application endpoints.
+2. Middleware: Used to process requests and responses.
+3. Request and Response: Used to communicate between clients and servers.
+4. REST APIs: Used to build communication between frontend and backend.
+5. Error Handling: Used to manage application errors.
+6. HTTP Methods: Includes GET, POST, PUT, PATCH, and DELETE.
+7. Database Integration: Connects applications with databases like MongoDB.
+
+Express.js is commonly used with Node.js, MongoDB, and React to build full-stack web applications.`,
+    },
+    {
+      id: 4,
+      title: "Learn Python Programming",
+      description:
+        "Explore Python fundamentals and build real-world applications.",
+      image:
+        "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=870&auto=format&fit=crop",
+      author: "Dildar Hussain",
+      date: "November 15, 2026",
+      content: `Python is a powerful, beginner-friendly programming language used in web development, automation, artificial intelligence, and data science.
+
+Its simple syntax makes it easier for developers to write readable code and build different types of applications.
+
+Some important Python concepts include:
+
+1. Variables: Used to store different types of data.
+2. Data Types: Includes strings, integers, floats, lists, and dictionaries.
+3. Conditional Statements: Used to make decisions in programs.
+4. Loops: Used to repeat tasks efficiently.
+5. Functions: Used to organize reusable code.
+6. Object-Oriented Programming: Used to organize code using classes and objects.
+7. File Handling: Used to read and write files.
+8. Libraries: Includes NumPy, Pandas, and Requests.
+
+Python is widely used with frameworks like Django and Flask to build web applications. It is also an important language for machine learning and artificial intelligence.`,
+    },
+    {
+      id: 5,
+      title: "AI and Automation",
+      description:
+        "Discover how artificial intelligence can automate everyday tasks.",
+      image:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=870&auto=format&fit=crop",
+      author: "Dildar Hussain",
+      date: "November 19, 2026",
+      content: `Artificial Intelligence (AI) is a technology that enables machines and computer systems to perform tasks that normally require human intelligence.
+
+AI automation combines artificial intelligence with automated workflows to reduce repetitive work, improve productivity, and make applications smarter.
+
+Some important AI and automation concepts include:
+
+1. Machine Learning: Enables systems to learn patterns from data.
+2. Natural Language Processing: Helps computers understand and process human language.
+3. AI Models: Power intelligent applications and automated systems.
+4. Python Automation: Uses Python to automate repetitive tasks.
+5. APIs: Allow different applications and AI services to communicate.
+6. Chatbots: Provide automated conversations and customer support.
+7. Workflow Automation: Connects different tools to perform tasks automatically.
+8. AI Agents: Can use tools and information to complete multi-step tasks.
+
+AI automation is used in businesses, web applications, customer support, data processing, and many other industries. Python is particularly useful for developing AI-powered automation systems.`,
+    },
+
+    {
+      id: 3,
       title: "Learn Bootstrap",
       description: "Build responsive websites with Bootstrap.",
-      image: "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      image:
+        "https://images.unsplash.com/photo-1634084462412-b54873c0a56d?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
       author: "Dildar Hussain",
       date: "November 09, 2026",
       content: `Bootstrap is a popular frontend CSS framework used to build responsive and mobile-friendly websites quickly.
@@ -75,7 +154,6 @@ Some important Bootstrap features include:
 
 Bootstrap is especially useful for quickly building responsive websites and frontend projects. It works well with React, HTML, CSS, and JavaScript.`,
     },
-    // including their content properties.
   ];
 
   const selectedBlog = blogs.find(

@@ -12,10 +12,10 @@ function Skills(){
         </h1>
       </div>
        <section className="skills-section">
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
 
-          <div className="col-12 col-lg-6">
+          <div className="col-12 mx-sm-auto col-lg-6 ">
             <SkillBar name="HTML" percentage={100} />
             <SkillBar name="CSS" percentage={95} />
             <SkillBar name="Bootstrap" percentage={85} />

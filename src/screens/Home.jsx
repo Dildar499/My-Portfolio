@@ -11,9 +11,9 @@ function Home() {
         {/* Image Section */}
         <div className="col-12 col-lg-5 col-md-12 d-flex image-sections  justify-content-right align-items-end order-1 order-lg-2 order-md-1 ">
           <img
-            src="/2638.jpg"
+            src="/pic.png"
             className="profile-image rounded-circle border border-3 border-info"
-            alt="Dildar Hussain" style={{width: '700px', height:'500px'}}
+            alt="Dildar Hussain" style={{width: '700px', height:'400px'}}
           />
         </div>
 
@@ -70,7 +70,7 @@ function Home() {
             </div>
 
           </div>
-          <div className="col-12 col-sm-6 col-lg-4 text-center">
+          <div className="col-12 col-sm-6 col-md-6 mx-md-auto col-lg-4 text-center">
             <div className="my-box">
               <li className='text-decoration-none list-unstyled'>
               <div className='color-picker px-5 py-5' style={{height: '350px'

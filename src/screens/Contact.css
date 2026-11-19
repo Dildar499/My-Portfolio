@@ -57,6 +57,13 @@
 .input-fields input:focus{
   outline: none;
 }
+.input-fields input:hover{
+  background-color: white;
+  color: #00c0ff;
+  outline: none;
+  box-shadow: none;
+  transition: 1s ease-in-out;
+}
 
 .textArea {
   padding: 10px 20px;
@@ -70,6 +77,13 @@
 }
 .textArea:focus{
   outline: none;
+}
+.textArea:hover{
+  background-color: white;
+  color: #00c0ff;
+  outline: none;
+  box-shadow: none;
+  transition: 1s ease-in-out;
 }
 
 @media (min-width: 576px) {
@@ -86,41 +100,67 @@
   background-color: hsl(253, 45%, 31%);
   padding: 50px 50px;
   height: 100%;
+  width: 100%;
 }
 
 @media screen and(min-width:786) and (max-width: 1024) {
   .newsLetter {
-    height: 100%
+    height: 100%;
+    width: 100%;
   }
 }
 
+
 .textContent {
   display: flex;
-  justify-items: center;
-  margin: 20px 0px;
-  font-size: 20px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
 }
 
 .textContent input {
-  padding: 20px 10px;
-  border-radius: 20px 0 0 20px;
-  border: none;
-  border-style: none;
+  flex: 1;
+  min-width: 0;
+  padding: 12px 15px;
+  border: 1px solid #777;
+  border-radius: 8px;
   outline: none;
-  color: grey;
+  font-size: 16px;
 }
 
 .textContent input:focus {
-  outline: none;
+  border-color: #00c0ff;
 }
 
 .textContent button {
-  padding: 20px 15px;
-  border-radius: 0 20px 20px 0;
+  padding: 12px 22px;
   border: none;
+  border-radius: 8px;
   background-color: #00c0ff;
   color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s ease;
 }
+
+.textContent button:hover {
+  background-color: blue;
+  transition: 1s ease-in-out;
+}
+
+/* Small devices */
+@media (max-width: 575px) {
+  .textContent {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .textContent input,
+  .textContent button {
+    width: 100%;
+  }
+}
+
 
 .input-fields button {
   padding: 10px 20px;

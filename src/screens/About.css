@@ -1,10 +1,53 @@
-.item{
+
+/* About Section */
+.about-section {
+  margin-top: 100px;
+}
+
+.content-section {
+  margin-bottom: 100px;
+}
+
+.about-heading {
+  color: #00c0ff;
+}
+
+.about-title {
+  font-size: 45px;
+}
+
+/* Profile Image */
+.image-container {
+  position: relative;
+  min-height: 450px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.profile-image1 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* About Information */
+.about-content {
+  width: 100%;
+}
+
+.item {
   height: 100%;
   margin: 0;
   padding: 1.5rem;
   border: 1px solid #777;
   list-style: none;
 }
+
 .item li {
   overflow-wrap: anywhere;
 }
@@ -12,79 +55,83 @@
 .item p {
   margin-bottom: 1rem;
 }
-.about-section{
-    margin-top: 100px;
-}
-@media (max-width: 767px) {
-  .about-section {
-    margin-top: 100px;
-  }
-}
-.content-section{
-    margin-bottom: 100px;
-}
-.image-container {
-  position: relative;
-  min-height: 400px;
+
+/* Download CV */
+.download {
+  display: inline-block;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: #3a2b71;
+  border: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
 }
 
-.image-container img {
-
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.download:hover {
+  background-color: #00c0ff;
+  color: black;
+  transform: translateY(-3px);
 }
 
-@media (max-width: 767px) {
-  .image-container {
-    min-height: 0;
-  }
+/* Statistics */
+.cards {
+  margin: 150px auto;
+}
 
-  .image-container img {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-}
-.download{
-    color:white;
-    font-size: 25px;
-    cursor: pointer;
-    border-radius: 30px;
-    background-color: #3a2b71;
-    border: none;
-    padding: 10px 20px;
-    
-    
-}
-.download:hover{
-    background-color: #00c0ff;
-    color: white;
-    transition: 1s ease-in-out;
-    color:black;
-    transform:translateY(-0.1rem);
-   transition: 1s ease-in-out;
-}
-.cards{
-    margin: 150px 0;
-}
-.cards-h3{
+.cards-h3 {
   color: aqua;
   font-size: 40px;
 }
-.cards-h5{
+
+.cards-h5 {
   color: white;
   font-size: 25px;
 }
-.progress-wrap {
-  margin-bottom: 1.5rem;
+
+/* Tablet and Mobile */
+@media (max-width: 991px) {
+  .content-section {
+    margin-bottom: 60px;
+  }
+
+  .image-container {
+    min-height: 400px;
+  }
+
+  .about-title {
+    font-size: 38px;
+  }
+
+  .cards {
+    margin: 100px auto;
+  }
 }
 
-.progress-label {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.4rem;
+/* Small Devices */
+@media (max-width: 575px) {
+  .about-section {
+    margin-top: 80px;
+  }
+
+  .content-section {
+    margin-bottom: 40px;
+  }
+
+  .about-title {
+    font-size: 30px;
+  }
+
+  .image-container {
+    min-height: 350px;
+  }
+
+  .download {
+    font-size: 20px;
+  }
+
+  .cards {
+    margin: 70px auto;
+  }
 }
