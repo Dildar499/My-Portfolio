@@ -1,17 +1,64 @@
+
 import "./Services.css";
+import { motion } from "motion/react";
+
+// Animation for individual elements
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Animation for multiple children
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 function Services() {
   return (
     <>
-      <div className="container text-center ">
+      {/* Services Heading */}
+      <motion.div
+        className="container text-center"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <h4 style={{ color: "#00c0ff" }}>Services</h4>
-        <h1 style={{ fontSize: "45px" }}>What I Do for My Clients</h1>
-      </div>
+        <h1 style={{ fontSize: "45px" }}>
+          What I Do for My Clients
+        </h1>
+      </motion.div>
 
-      <div className="container card-products">
-        <div className="row gy-4">
+      {/* Services Cards */}
+      <motion.div
+        className="container card-products"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+      >
+        <motion.div
+          className="row gy-4"
+          variants={staggerContainer}
+        >
           <div className="col-lg-4 col-md-6 col-12">
-            <div className="card1">
+            <motion.div className="card1" variants={fadeUp}>
               <div>
                 <svg
                   fill="currentColor"
@@ -37,10 +84,11 @@ function Services() {
                 navigation, and designs that work smoothly on phones, tablets,
                 and computers.
               </p>
-            </div>
+            </motion.div>
           </div>
+
           <div className="col-lg-4 col-md-6 col-12">
-            <div className="card1">
+            <motion.div className="card1" variants={fadeUp}>
               <div>
                 <svg
                   fill="currentColor"
@@ -64,10 +112,11 @@ function Services() {
                 communicate with clients. I focus on thoughtful layouts,
                 consistent colors, and designs suited to your needs.
               </p>
-            </div>
+            </motion.div>
           </div>
+
           <div className="col-lg-4 col-md-6 col-12">
-            <div className="card1">
+            <motion.div className="card1" variants={fadeUp}>
               <div>
                 <svg
                   fill="currentColor"
@@ -98,10 +147,11 @@ function Services() {
                 I help businesses promote their products and services online
                 with clear, engaging content and a consistent brand presence.
               </p>
-            </div>
+            </motion.div>
           </div>
+
           <div className="col-lg-4 col-md-6 col-12">
-            <div className="card1">
+            <motion.div className="card1" variants={fadeUp}>
               <div>
                 <svg
                   fill="currentColor"
@@ -128,10 +178,11 @@ function Services() {
                 make a strong impression. I focus on thoughtful composition,
                 lighting, and edits that fit the intended use.
               </p>
-            </div>
+            </motion.div>
           </div>
+
           <div className="col-lg-4 col-md-6 col-12">
-            <div className="card1">
+            <motion.div className="card1" variants={fadeUp}>
               <div>
                 <svg
                   style={{ color: "#10c4ff" }}
@@ -160,7 +211,7 @@ function Services() {
                     <path d="m384.800781 327.449219h-61c-5.523437 0-10 4.476562-10 10 0 5.523437 4.476563 10 10 10h61c5.523438 0 10-4.476563 10-10 0-5.523438-4.476562-10-10-10zm0 0"></path>
                     <path d="m352.800781 364.050781h-29c-5.523437 0-10 4.476563-10 10 0 5.523438 4.476563 10 10 10h29c5.523438 0 10-4.476562 10-10 0-5.523437-4.476562-10-10-10zm0 0"></path>
                   </g>
-                  <path d="m454.300781 349.648438c.011719-43.453126-28.035156-81.945313-69.402343-95.25-41.371094-13.304688-86.597657 1.621093-111.917969 36.9375-25.320313 35.316406-24.945313 82.941406.933593 117.851562 25.875 34.910156 71.332032 49.121094 112.488282 35.164062l49.699218 8.699219c.5625.078125 1.128907.113281 1.699219.097657 3.34375-.019532 6.460938-1.707032 8.304688-4.496094 1.847656-2.789063 2.183593-6.316406.894531-9.402344l-12.597656-29.699219c5.433594-7.152343 9.839844-15.027343 13.097656-23.402343 4.496094-11.644532 6.800781-24.015626 6.800781-36.5zm-25.5 29.101562c-3.261719 8.261719-7.855469 15.929688-13.601562 22.699219-2.488281 2.871093-3.109375 6.914062-1.597657 10.402343l7.800782 18.296876-34.101563-6c-.5625-.082032-1.132812-.113282-1.699219-.097657-1.195312-.003906-2.378906.199219-3.5.597657-32.777343 12.148437-69.648437 1.601562-91.046874-26.039063-21.398438-27.640625-22.371094-65.972656-2.402344-94.664063 19.96875-28.691406 56.253906-41.09375 89.605468-30.625 33.351563 10.464844 56.046876 41.375 56.042969 76.328126.03125 9.964843-1.832031 19.839843-5.5 29.101562zm0 0"></path>
+                  <path d="m454.300781 349.648438c.011719-43.453126-28.035156-81.945313-69.402343-95.25-41.371094-13.304688-86.597657 1.621093-111.917969 36.9375-25.320312 35.316406-24.945313 82.941406.933593 117.851562 25.875 34.910156 71.332032 49.121094 112.488282 35.164062l49.699218 8.699219c.5625.078125 1.128907.113281 1.699219.097657 3.34375-.019532 6.460938-1.707032 8.304688-4.496094 1.847656-2.789063 2.183593-6.316406.894531-9.402344l-12.597656-29.699219c5.433594-7.152343 9.839844-15.027343 13.097656-23.402343 4.496094-11.644532 6.800781-24.015626 6.800781-36.5zm-25.5 29.101562c-3.261719 8.261719-7.855469 15.929688-13.601562 22.699219-2.488281 2.871093-3.109375 6.914062-1.597657 10.402343l7.800782 18.296876-34.101563-6c-.5625-.082032-1.132812-.113282-1.699219-.097657-1.195312-.003906-2.378906.199219-3.5.597657-32.777343 12.148437-69.648437 1.601562-91.046874-26.039063-21.398438-27.640625-22.371094-65.972656-2.402344-94.664063 19.96875-28.691406 56.253906-41.09375 89.605468-30.625 33.351563 10.464844 56.046876 41.375 56.042969 76.328126.03125 9.964843-1.832031 19.839843-5.5 29.101562zm0 0"></path>
                 </svg>
               </div>
               <h2>Consultancy</h2>
@@ -169,10 +220,11 @@ function Services() {
                 discussing their goals, reviewing their ideas, and recommending
                 practical next steps.
               </p>
-            </div>
+            </motion.div>
           </div>
+
           <div className="col-lg-4 col-md-6 col-12">
-            <div className="card1">
+            <motion.div className="card1" variants={fadeUp}>
               <div>
                 <svg
                   style={{ color: "#10c4ff" }}
@@ -202,68 +254,107 @@ function Services() {
                 navigation, and reliable functionality to help bring your ideas
                 online.
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      </div>
-       <div className="container text-center ">
+        </motion.div>
+      </motion.div>
+
+      {/* Experience Heading */}
+      <motion.div
+        className="container text-center"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <h4 style={{ color: "#00c0ff" }}>Experience</h4>
         <h1 style={{ fontSize: "45px" }}>
           I Worked for Some Companies
-          
         </h1>
-      </div>
+      </motion.div>
 
-       <section className="container py-5 text-white">
-      <div className="row g-5">
+      {/* Experience and Education */}
+      <section className="container py-5 text-white">
+        <motion.div
+          className="row g-5"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* Experience */}
+          <motion.div
+            className="col-12 col-lg-6"
+            variants={staggerContainer}
+          >
+            <h2 className="mb-4">Experience</h2>
 
-        {/* Experience */}
-        <div className="col-12 col-lg-6">
-          <h2 className="mb-4">Experience</h2>
+            <motion.div
+              className="timeline-item"
+              variants={fadeUp}
+            >
+              <h3>Frontend Web Developer</h3>
+              <p className="text-white-50">
+                Devicon Software House | 22, Sept, 2023 - 2, June, 2024
+              </p>
+              <p className="text-white-50">
+                Doing my job as a frontend developer in React Js in Devicon
+                Software House.
+              </p>
+            </motion.div>
 
-          <div className="border-start border-info border-3 ps-4 mb-4">
-            <h3>Frontend Web Developer</h3>
-            <p className="text-white-50">Devicon Software House | 22, Sept, 2023 - 2, June, 2024</p>
-            <p className="text-white-50">
-              Doing my job as a frontend developer in React Js in Devicon Software House.
-            </p>
-          </div>
+            <motion.div
+              className="timeline-item"
+              variants={fadeUp}
+            >
+              <h3>MERN Developer</h3>
+              <p className="text-white-50">
+                Uni Web Solutions | 31, October, 2026 - currently Working
+              </p>
+              <p className="text-white-50">
+                Doing job as a MERN Stack Developer in Uni-Web Solutions.
+              </p>
+            </motion.div>
+          </motion.div>
 
-          <div className="border-start border-info border-3 ps-4">
-            <h3>MERN Developer</h3>
-            <p className="text-white-50">Uni Web Solutions | 31, October, 2026 - currently Working</p>
-            <p className="text-white-50">
-              Doing job as a MERN Stack Developer in Uni-Web Solutions.
-            </p>
-          </div>
-        </div>
+          {/* Education */}
+          <motion.div
+            className="col-12 col-lg-6"
+            variants={staggerContainer}
+          >
+            <h2 className="mb-4">Education</h2>
 
-        {/* Education */}
-        <div className="col-12 col-lg-6">
-          <h2 className="mb-4">Education</h2>
+            <motion.div
+              className="timeline-item"
+              variants={fadeUp}
+            >
+              <h3>BS Computer Science</h3>
+              <p className="text-white-50">
+                Khwaja Fareed University of Engineering and IT | 2020–2024
+              </p>
+              <p className="text-white-50">
+                Web Programming, Java (OOP), C++, C# and many other programming
+                languages. Last semester completed my Final Year Project (Loan
+                Approval Prediction Portal Using AI).
+              </p>
+            </motion.div>
 
-          <div className="border-start border-info border-3 ps-4">
-            <h3>BS Computer Science</h3>
-            <p className="text-white-50">
-              Khwaja Fareed University of Engineering and IT | 2020–2024
-            </p>
-            <p className="text-white-50">
-              Web_Programming, Java(OOP), C++, C# and Many Others Progamming Languages. Last Semester done my Final Year Project (Loan Approval Prediction Portal Using AI)
-            </p>
-          </div>
-          <div className="border-start border-info border-3 ps-4">
-            <h3>Fsc (Pre-Engineering)</h3>
-            <p className="text-white-50">
-              Govt.Postgraduate(Boys) College, Muzaffargarh | 2018–2020
-            </p>
-            <p className="text-white-50">
-              My major Subjects in Pre-Engineering are Math , Chemistry , Physics.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
+            <motion.div
+              className="timeline-item"
+              variants={fadeUp}
+            >
+              <h3>FSc (Pre-Engineering)</h3>
+              <p className="text-white-50">
+                Govt. Postgraduate (Boys) College, Muzaffargarh | 2018–2020
+              </p>
+              <p className="text-white-50">
+                My major subjects in Pre-Engineering are Mathematics, Chemistry,
+                and Physics.
+              </p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </section>
     </>
   );
 }

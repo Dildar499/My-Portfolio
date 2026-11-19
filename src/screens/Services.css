@@ -32,3 +32,41 @@
     }
     
  }
+ .timeline-item {
+    border-left: 4px solid #00c0ff;
+    padding-left: 36px;
+    margin-bottom: 36px;
+}
+
+.timeline-item h3 {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.timeline-item p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.timeline-item p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .timeline-item {
+        padding-left: 20px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-item h3 {
+        font-size: 24px;
+    }
+
+    .timeline-item p {
+        font-size: 15px;
+    }
+}

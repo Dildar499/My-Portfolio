@@ -1,5 +1,33 @@
+
 import { useNavigate } from "react-router-dom";
 import "./Blogs.css";
+import { motion } from "motion/react";
+
+// Animation for individual elements
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Animation for multiple cards
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 function Blogs() {
   const navigate = useNavigate();
@@ -158,22 +186,40 @@ Bootstrap is especially useful for quickly building responsive websites and fron
 
   return (
     <>
-      <div className="container text-center">
+      {/* Blog Heading */}
+      <motion.div
+        className="container text-center"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <h4 style={{ color: "#00c0ff" }}>Blog</h4>
         <h1 style={{ fontSize: "45px" }}>Latest Blog Posts</h1>
-      </div>
+      </motion.div>
 
+      {/* Blog Cards */}
       <div className="container my-5">
-        <div className="row">
-          {blogs.map((blog) => (
-            <div className="col-md-6 col-lg-4 mx-md-auto mb-4 " key={blog.id}>
-              <div
+        <motion.div
+          className="row"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {blogs.map((blog, index) => (
+            <div
+              className="col-md-6 col-lg-4 mx-md-auto mb-4"
+              key={`${blog.id}-${index}`}
+            >
+              <motion.div
                 className="card h-100 Blog-card"
                 style={{
                   backgroundColor: "#3a2b71",
                   border: "none",
                   borderRadius: "22px",
                 }}
+                variants={fadeUp}
               >
                 <img
                   src={blog.image}
@@ -194,9 +240,13 @@ Bootstrap is especially useful for quickly building responsive websites and fron
                     {blog.title}
                   </h5>
 
-                  <p className="card-text text-light">{blog.description}</p>
+                  <p className="card-text text-light">
+                    {blog.description}
+                  </p>
 
-                  <p className=" text-secondary ">{blog.author}</p>
+                  <p className="text-secondary">
+                    {blog.author}
+                  </p>
 
                   <button
                     className="btn btn-info"
@@ -205,10 +255,10 @@ Bootstrap is especially useful for quickly building responsive websites and fron
                     Read More
                   </button>
                 </div>
-              </div>
+              </motion.div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </>
   );

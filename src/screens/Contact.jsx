@@ -1,5 +1,32 @@
 import "./Contact.css";
 import { useState } from "react";
+import { motion } from "motion/react";
+import { BorderBeam } from "@/components/ui/border-beam";
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 function Contact() {
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
@@ -20,18 +47,43 @@ function Contact() {
     setSubject("");
     setMessage("");
   };
+
   return (
     <>
-      <div className="container text-center">
+      {/* Contact Heading */}
+      <motion.div
+        className="container text-center"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <h4 style={{ color: "#00c0ff" }}>Contact</h4>
         <h1 style={{ fontSize: "45px" }}>I Want To Hear From You</h1>
-      </div>
+      </motion.div>
 
+      {/* Contact Section */}
       <div className="container listContact">
-        <div className="row gy-5">
-          <div className="col-md-6 col-12">
-            <ul className="contact-list">
-              <li className="d-flex align-items-start gap-4 py-3">
+        <motion.div
+          className="row gy-5"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {/* Contact Information */}
+          <motion.div className="col-md-6 col-12" variants={fadeUp}>
+            <motion.ul
+              className="contact-list"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <motion.li
+                className="d-flex align-items-start gap-4 py-3"
+                variants={fadeUp}
+              >
                 <div className="contact-icon">
                   <svg
                     style={{ width: "50px", height: "30px", color: "white" }}
@@ -54,9 +106,12 @@ function Contact() {
                     Azaan City, Sahiwal
                   </a>
                 </div>
-              </li>
+              </motion.li>
 
-              <li className="d-flex align-items-start gap-4 py-3">
+              <motion.li
+                className="d-flex align-items-start gap-4 py-3"
+                variants={fadeUp}
+              >
                 <div className="contact-icon">
                   <svg
                     style={{ width: "50px", height: "30px", color: "white" }}
@@ -79,9 +134,12 @@ function Contact() {
                     webtech754@gmail.com
                   </a>
                 </div>
-              </li>
+              </motion.li>
 
-              <li className="d-flex align-items-start gap-4">
+              <motion.li
+                className="d-flex align-items-start gap-4"
+                variants={fadeUp}
+              >
                 <div className="contact-icon">
                   <svg
                     style={{ width: "50px", height: "30px", color: "white" }}
@@ -104,84 +162,104 @@ function Contact() {
                     +92-326650403-5
                   </a>
                 </div>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-6 col-12">
+              </motion.li>
+            </motion.ul>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div className="col-md-6 col-12" variants={fadeUp}>
             <form onSubmit={HandleForm}>
-              <div className="input-fields">
+              <div className="input-fields position-relative p-4 rounded-4 overflow-hidden">
                 <input
                   type="text"
                   placeholder="Your Name"
                   value={text}
-                  onChange={(e) => {
-                    setText(e.target.value);
-                  }}
+                  onChange={(e) => setText(e.target.value)}
                   required
                 />
+
                 <input
                   type="email"
                   placeholder="Your Email"
                   value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
+
                 <input
                   type="text"
                   placeholder="Your Phone"
                   value={phone}
-                  onChange={(e) => {
-                    setPhone(e.target.value);
-                  }}
+                  onChange={(e) => setPhone(e.target.value)}
                   required
                 />
+
                 <input
                   type="text"
                   placeholder="Your Subject"
                   value={subject}
-                  onChange={(e) => {
-                    setSubject(e.target.value);
-                  }}
+                  onChange={(e) => setSubject(e.target.value)}
                   required
                 />
+
                 <textarea
-                  name=""
                   id="textArea"
                   placeholder="Your Message.."
                   className="textArea"
                   value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
+                  onChange={(e) => setMessage(e.target.value)}
                   required
-                ></textarea>
-                <button type="submit" className="btn input-fields button  " style={{backgroundColor: success ? 'green': '', color: 'white'}}>
+                />
+
+                <button
+                  type="submit"
+                  className="btn input-fields button"
+                  style={{
+                    backgroundColor: success ? "green" : "",
+                    color: "white",
+                  }}
+                >
                   {success ? "Message Send" : "Click to Send"}
                 </button>
+
+                <BorderBeam
+                  size={150}
+                  duration={8}
+                  borderWidth={2}
+                  colorFrom="#00c0ff"
+                  colorTo="#a855f7"
+                />
               </div>
             </form>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
+      {/* Newsletter Section */}
       <div className="container-fluid newsLetter">
         <section className="newsletter-section">
           <div className="container">
-            <div className="row align-items-center gy-4">
+            <motion.div
+              className="row align-items-center gy-4"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               {/* Newsletter Content */}
-              <div className="col-12 col-lg-6">
+              <motion.div className="col-12 col-lg-6" variants={fadeUp}>
                 <div className="newsletter-content">
                   <h4 className="text-info">Subscribe Now</h4>
                   <h1>Get My Newsletter</h1>
-                  <p className="text-secondary">Get latest news, tips and trics in your inbox</p>
+                  <p className="text-secondary">
+                    Get latest news, tips and trics in your inbox
+                  </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Email Input */}
-              <div className="col-12 col-lg-6">
-                <div className="textContent">
+              <motion.div className="col-12 col-lg-6" variants={fadeUp}>
+                <div className="textContent position-relative p-3 rounded-4 overflow-hidden">
                   <input
                     type="email"
                     placeholder="Your email here"
@@ -190,9 +268,17 @@ function Contact() {
                   />
 
                   <button onClick={() => setEmail1("")}>Send Now</button>
+
+                  <BorderBeam
+                    size={100}
+                    duration={8}
+                    borderWidth={2}
+                    colorFrom="#00c0ff"
+                    colorTo="#a855f7"
+                  />
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
       </div>

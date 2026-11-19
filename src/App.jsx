@@ -10,11 +10,15 @@ import Skills from "./screens/Skills";
 import BlogDetails from "./screens/BlogDetails";
 import Contact from "./screens/Contact";
 import ScrollToTop from "./components/ScrollTop";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
+
 
 function App() {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
+
+        <ScrollProgress/>
         <Navbar />
 
         <main className="main-content">

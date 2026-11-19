@@ -13,3 +13,6 @@
 .navbar-socials a:hover{
     color: #00c0ff !important;
 }
+.navbar-collapse.collapse {
+  visibility: visible;
+}
