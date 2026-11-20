@@ -1,7 +1,7 @@
 import "./Home.css";
 import { HyperText } from "@/components/ui/hyper-text";
 import { useNavigate } from "react-router-dom";
-import { motion, useScopeMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { useState } from "react";
 function Home() {
