@@ -15,6 +15,7 @@ function Home() {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={() => setReady(true)}
         whileHover={ready ? { y: -12 } : undefined}
+        whileTap={ready ? { y: -12 } : undefined}
       >
         <div className="row align-items-center gy-4 gx-md-5 gx-lg-5 hero-row">
           {/* Image Section */}
@@ -66,6 +67,7 @@ function Home() {
               transition={{ duration: 0.8 }}
               onAnimationComplete={() => setReady(true)}
               whileHover={ready ? { y: -12 } : undefined}
+              whileTap={ready ? { y: -12 } : undefined}
             >
               <li className="text-decoration-none list-unstyled">
                 <div
@@ -109,6 +111,7 @@ function Home() {
               transition={{ duration: 0.8 }}
               onAnimationComplete={() => setReady(true)}
               whileHover={ready ? { y: -12 } : undefined}
+              whileTap={ready ? { y: -12 } : undefined}
             >
               <li className="text-decoration-none list-unstyled">
                 <div
@@ -154,6 +157,7 @@ function Home() {
               transition={{ duration: 0.8 }}
               onAnimationComplete={() => setReady(true)}
               whileHover={ready ? { y: -12 } : undefined}
+              whileTap={ready ? { y: -12 } : undefined}
             >
               <li className="text-decoration-none list-unstyled">
                 <div
