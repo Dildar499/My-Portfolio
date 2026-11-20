@@ -61,6 +61,7 @@ function Contact() {
         viewport={{ once: true, amount: 0.5 }}
         onAnimationComplete={() => setReady(true)}
         whileHover={ready ? { y: -12 } : undefined}
+        whileTap={ready ? { y: -12 } : undefined}
         transition={{ duration: 0.5 }}
       >
         <h4 style={{ color: "#00c0ff" }}>Contact</h4>
@@ -175,6 +176,7 @@ function Contact() {
             variants={fadeUp}
             onAnimationComplete={() => setReady(true)}
             whileHover={ready ? { y: -12 } : undefined}
+            whileTap={ready ? { y: -12 } : undefined}
             transition={{ duration: 0.5 }}
           >
             <form onSubmit={HandleForm}>
