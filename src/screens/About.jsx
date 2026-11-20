@@ -18,6 +18,7 @@ function About() {
           transition={{ duration: 0.8 }}
           onAnimationComplete={() => setReady(true)}
           whileHover={ready ? { y: -12 } : undefined}
+          whileTap={ready ? { y: -12 } : undefined}
         >
           <h4 className="about-heading">About Me</h4>
           <h1 className="about-title">
@@ -40,6 +41,7 @@ function About() {
                   transition={{ duration: 0.8 }}
                   onAnimationComplete={() => setReady(true)}
                   whileHover={ready ? { y: -12 } : undefined}
+                  whileTap={ready ? { y: -12 } : undefined}
                   alt="Dildar Hussain"
                 />
               </div>
@@ -55,6 +57,7 @@ function About() {
                 transition={{ duration: 0.8 }}
                 onAnimationComplete={() => setReady(true)}
                 whileHover={ready ? { y: -12 } : undefined}
+                whileTap={ready ? { y: -12 } : undefined}
               >
                 <h2 className="about-heading">About Me</h2>
 
@@ -158,6 +161,7 @@ function About() {
             transition={{ duration: 0.8 }}
             onAnimationComplete={() => setReady(true)}
             whileHover={ready ? { y: -14 } : undefined}
+            whileTap={ready ? { y: -12 } : undefined}
           >
             <AnimatedCounter target={50} suffix="+" title="Digital Products" />
           </motion.div>
@@ -169,6 +173,7 @@ function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
             onAnimationComplete={() => setReady(true)}
+            whileTap={ready ? { y: -12 } : undefined}
             whileHover={ready ? { y: -14 } : undefined}
           >
             <AnimatedCounter target={60} suffix="+" title="Direct Clients" />
@@ -181,6 +186,7 @@ function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
             onAnimationComplete={() => setReady(true)}
+            whileTap={ready ? { y: -12 } : undefined}
             whileHover={ready ? { y: -14 } : undefined}
           >
             <AnimatedCounter
@@ -198,6 +204,7 @@ function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
             onAnimationComplete={() => setReady(true)}
+            whileTap={ready ? { y: -12 } : undefined}
             whileHover={ready ? { y: -14 } : undefined}
           >
             <AnimatedCounter target={80} title="Awards Win" suffix="+" />
