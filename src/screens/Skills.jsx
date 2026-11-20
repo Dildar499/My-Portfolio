@@ -17,6 +17,7 @@ function Skills() {
         }}
         onAnimationComplete={() => setReady(true)}
         whileHover={ready ? { y: -12 } : undefined}
+        whileTap={ready ? { y: -12 } : undefined}
       >
         <h4 style={{ color: "#00c0ff" }}>Skills</h4>
 
@@ -39,6 +40,7 @@ function Skills() {
               }}
               onAnimationComplete={() => setReady(true)}
               whileHover={ready ? { y: -12 } : undefined}
+              whileTap={ready ? { y: -12 } : undefined}
             >
               <SkillBar name="HTML" percentage={100} />
               <SkillBar name="CSS" percentage={95} />
@@ -55,6 +57,7 @@ function Skills() {
               }}
               onAnimationComplete={() => setReady(true)}
               whileHover={ready ? { y: -12 } : undefined}
+              whileTap={ready ? { y: -12 } : undefined}
             >
               <SkillBar name="JavaScript" percentage={90} />
               <SkillBar name="JSON" percentage={85} />
