@@ -2,6 +2,7 @@ import "./Home.css";
 import { HyperText } from "@/components/ui/hyper-text";
 import { useNavigate } from "react-router-dom";
 import { motion, useScopeMotion } from "framer-motion";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 import { useState } from "react";
 function Home() {
   const navigate = useNavigate();
@@ -46,12 +47,7 @@ function Home() {
             </h5>
 
             <div className="mt-4 d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
-              <button
-                onClick={() => navigate("/services")}
-                className="btn px-4 py-2 btn-outline-info border-0 border-1 rounded-5 fs-4"
-              >
-                View My Work →
-              </button>
+              <RainbowButton>View My Work</RainbowButton>
             </div>
           </div>
         </div>
