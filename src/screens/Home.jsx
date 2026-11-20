@@ -1,5 +1,6 @@
 import "./Home.css";
 import { HyperText } from "@/components/ui/hyper-text";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -46,9 +47,9 @@ function Home() {
             </h5>
 
             <div className="mt-4 d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
-              
-
-              
+              <InteractiveHoverButton onClick={() => navigate("/services")}>
+                View My Work
+              </InteractiveHoverButton>
             </div>
           </div>
         </div>
