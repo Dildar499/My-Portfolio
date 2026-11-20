@@ -195,6 +195,7 @@ Bootstrap is especially useful for quickly building responsive websites and fron
         viewport={{ once: true, amount: 0.5 }}
         onAnimationComplete={() => setReady(true)}
         whileHover={ready ? { y: -12 } : undefined}
+        whileTap={ready ? { y: -12 } : undefined}
         transition={{ duration: 0.5 }}
       >
         <h4 style={{ color: "#00c0ff" }}>Blog</h4>
@@ -220,6 +221,7 @@ Bootstrap is especially useful for quickly building responsive websites and fron
                 variants={fadeUp}
                 onAnimationComplete={() => setReady(true)}
                 whileHover={ready ? { y: -12 } : undefined}
+                whileTap={ready ? { y: -12 } : undefined}
                 transition={{ duration: 0.5 }}
               >
                 <img
