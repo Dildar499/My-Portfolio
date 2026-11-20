@@ -34,11 +34,14 @@ function Services() {
     <>
       {/* Services Heading */}
       <motion.div
-        className="container text-center px-3"
+        className="container text-center px-3 mb-5"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
+        onAnimationComplete={() => setReady(true)}
+        whileHover={ready ? { y: -12 } : undefined}
+        transition={{ duration: 0.5 }}
       >
         <h4 style={{ color: "#00c0ff" }}>Services</h4>
         <h1 className="section-title">What I Do for My Clients</h1>
@@ -293,7 +296,7 @@ function Services() {
 
       {/* Experience Heading */}
       <motion.div
-        className="container text-center px-3"
+        className="container text-center px-3 py-5"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
