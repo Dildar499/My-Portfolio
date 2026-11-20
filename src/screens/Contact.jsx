@@ -28,6 +28,8 @@ const staggerContainer = {
 };
 
 function Contact() {
+
+  const [ready , setReady] = useState(false)
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -52,14 +54,17 @@ function Contact() {
     <>
       {/* Contact Heading */}
       <motion.div
-        className="container text-center"
+        className="container text-center mt-4 mt-md-5 px-3"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
+        onAnimationComplete={() => setReady(true)}
+        whileHover={ready ? { y: -12 } : undefined}
+        transition={{ duration: 0.5 }}
       >
         <h4 style={{ color: "#00c0ff" }}>Contact</h4>
-        <h1 style={{ fontSize: "45px" }}>I Want To Hear From You</h1>
+        <h1 className="section-title">I Want To Hear From You</h1>
       </motion.div>
 
       {/* Contact Section */}
@@ -81,7 +86,7 @@ function Contact() {
               viewport={{ once: true, amount: 0.1 }}
             >
               <motion.li
-                className="d-flex align-items-start gap-4 py-3"
+                className="d-flex align-items-start gap-3 gap-md-4 py-3"
                 variants={fadeUp}
               >
                 <div className="contact-icon">
@@ -109,7 +114,7 @@ function Contact() {
               </motion.li>
 
               <motion.li
-                className="d-flex align-items-start gap-4 py-3"
+                className="d-flex align-items-start gap-3 gap-md-4 py-3"
                 variants={fadeUp}
               >
                 <div className="contact-icon">
@@ -127,9 +132,7 @@ function Contact() {
                   <h3>Email</h3>
                   <a
                     className="text-decoration-none text-secondary fs-5"
-                    href="mailto: webtech754@gmail.com"
-                    target="_blank"
-                    rel="nore noreferrer"
+                    href="mailto:webtech754@gmail.com"
                   >
                     webtech754@gmail.com
                   </a>
@@ -137,7 +140,7 @@ function Contact() {
               </motion.li>
 
               <motion.li
-                className="d-flex align-items-start gap-4"
+                className="d-flex align-items-start gap-3 gap-md-4"
                 variants={fadeUp}
               >
                 <div className="contact-icon">
@@ -167,9 +170,18 @@ function Contact() {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div className="col-md-6 col-12" variants={fadeUp}>
+          <motion.div
+            className="col-md-6 col-12"
+            variants={fadeUp}
+            onAnimationComplete={() => setReady(true)}
+            whileHover={ready ? { y: -12 } : undefined}
+            transition={{ duration: 0.5 }}
+          >
             <form onSubmit={HandleForm}>
-              <div className="input-fields position-relative p-4 rounded-4 overflow-hidden">
+              <div className="input-fields position-relative p-3 p-md-4 rounded-4 overflow-hidden">
+                <label className="fs-2 text-decoration-underline">
+                  Contact Form
+                </label>
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -204,6 +216,7 @@ function Contact() {
 
                 <textarea
                   id="textArea"
+                  rows={5}
                   placeholder="Your Message.."
                   className="textArea"
                   value={message}
@@ -248,7 +261,7 @@ function Contact() {
             >
               {/* Newsletter Content */}
               <motion.div className="col-12 col-lg-6" variants={fadeUp}>
-                <div className="newsletter-content">
+                <div className="newsletter-content text-center text-lg-start">
                   <h4 className="text-info">Subscribe Now</h4>
                   <h1>Get My Newsletter</h1>
                   <p className="text-secondary">

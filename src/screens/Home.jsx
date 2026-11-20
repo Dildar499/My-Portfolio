@@ -1,25 +1,28 @@
 import "./Home.css";
 import { HyperText } from "@/components/ui/hyper-text";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScopeMotion } from "framer-motion";
+import { useState } from "react";
 function Home() {
   const navigate = useNavigate();
+  const [ready, setReady] = useState(false);
   return (
     <>
       <motion.div
         className="container home-section py-5"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        onAnimationComplete={() => setReady(true)}
+        whileHover={ready ? { y: -12 } : undefined}
       >
-        <div className="row align-items-center g-5">
+        <div className="row align-items-center gy-4 gx-md-5 gx-lg-5 hero-row">
           {/* Image Section */}
-          <div className="col-12 col-lg-5 col-md-12 d-flex image-sections  justify-content-right align-items-end order-1 order-lg-2 order-md-1 ">
+          <div className="col-12 col-md-5 d-flex justify-content-center align-items-center image-sections order-1 order-md-2">
             <motion.img
               src="/pic.png"
               className="profile-image rounded-circle border border-3 border-info"
               alt="Dildar Hussain"
-              style={{ width: "700px", height: "400px" }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, delay: 0.3 }}
@@ -27,7 +30,7 @@ function Home() {
           </div>
 
           {/* Text Section */}
-          <div className="col-12 col-lg-7 col-md-12 text-white text-center text-lg-start order-2 order-lg-1 order-md-2">
+          <div className="col-12 col-md-7 text-white text-center text-md-start order-2 order-md-1 text-sections">
             <h1 className="fw-bold home-title">Hi! I'm</h1>
             <HyperText
               className="text-5xl font-semibold text-primary"
@@ -41,7 +44,7 @@ function Home() {
               Frontend Developer | React Developer
             </h5>
 
-            <div className="mt-4 d-flex flex-wrap justify-content-center justify-content-lg-start gap-2">
+            <div className="mt-4 d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
               <button
                 onClick={() => navigate("/services")}
                 className="btn px-4 py-2 btn-outline-info border-0 border-1 rounded-5 fs-4"
@@ -61,20 +64,20 @@ function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
+              onAnimationComplete={() => setReady(true)}
+              whileHover={ready ? { y: -12 } : undefined}
             >
               <li className="text-decoration-none list-unstyled">
                 <div
-                  className="color-picker px-5 py-5"
+                  className="color-picker px-3 py-5"
                   style={{ height: "350px" }}
                 >
-                  <div>
+                  <div className="icon-wrapper">
                     <svg
                       fill="currentColor"
-                      style={{ color: "#10c4ff", marginBottom: "10px" }}
+                      style={{ color: "#10c4ff" }}
                       xmlns="http://www.w3.org/2000/svg"
-                      height="70px"
                       viewBox="0 -4 400.002 400"
-                      width="100px"
                       className="svg replaced-svg"
                     >
                       <g fill="transparent">
@@ -104,20 +107,20 @@ function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
+              onAnimationComplete={() => setReady(true)}
+              whileHover={ready ? { y: -12 } : undefined}
             >
               <li className="text-decoration-none list-unstyled">
                 <div
-                  className="color-picker px-5 py-5"
+                  className="color-picker px-3 py-5"
                   style={{ height: "350px" }}
                 >
-                  <div>
+                  <div className="icon-wrapper">
                     <svg
                       fill="currentColor"
-                      style={{ color: "#10c4ff", marginBottom: "10px" }}
+                      style={{ color: "#10c4ff" }}
                       xmlns="http://www.w3.org/2000/svg"
-                      height="70px"
                       viewBox="0 -18 436.00025 436"
-                      width="100px"
                       className="svg replaced-svg"
                     >
                       <path
@@ -149,20 +152,20 @@ function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
+              onAnimationComplete={() => setReady(true)}
+              whileHover={ready ? { y: -12 } : undefined}
             >
               <li className="text-decoration-none list-unstyled">
                 <div
-                  className="color-picker px-5 py-5"
+                  className="color-picker px-3 py-5"
                   style={{ height: "350px" }}
                 >
-                  <div>
+                  <div className="icon-wrapper">
                     <svg
                       fill="currentColor"
-                      style={{ color: "#10c4ff", marginBottom: "10px" }}
+                      style={{ color: "#10c4ff" }}
                       xmlns="http://www.w3.org/2000/svg"
-                      height="70px"
                       viewBox="0 -17 400 400"
-                      width="100px"
                       className="svg replaced-svg"
                     >
                       <path

@@ -1,14 +1,68 @@
-.Blog-card {
-  transition: all 0.4s ease-in-out;
-  cursor: pointer;
-  background-color: hsl(253, 45%, 31%);
-  border: none;
-  border-radius:22px;
-
+/* =========================
+   SECTION TITLE
+========================= */
+.section-title {
+  font-size: clamp(1.75rem, 1rem + 2.5vw, 2.8rem);
+  line-height: 1.25;
 }
 
-.Blog-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
-  
+/* =========================
+   BLOG CARD
+========================= */
+.card.Blog-card {
+  background-color: #3a2b71;
+  border: none;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Image: scales with the card, same shape on every screen */
+.blog-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 260px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.Blog-card .card-body {
+  padding: 1rem;
+}
+
+.Blog-card .card-title {
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.Blog-card .card-text {
+  overflow-wrap: anywhere;
+}
+
+/* Lift effect only on devices that can hover (not touch screens) */
+@media (hover: hover) {
+  .Blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* =========================
+   SMALL (576px and up)
+========================= */
+@media (min-width: 576px) {
+  .Blog-card .card-body {
+    padding: 1.25rem;
+  }
+}
+
+/* =========================
+   LARGE (992px and up)
+========================= */
+@media (min-width: 992px) {
+  .Blog-card .card-body {
+    padding: 1.25rem 1.5rem;
+  }
 }

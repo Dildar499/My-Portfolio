@@ -131,7 +131,7 @@ AI automation is used in businesses, web applications, customer support, data pr
     },
 
     {
-      id: 3,
+      id: 6,
       title: "Learn Bootstrap",
       description: "Build responsive websites with Bootstrap.",
       image:
@@ -161,31 +161,47 @@ Bootstrap is especially useful for quickly building responsive websites and fron
   );
 
   if (!selectedBlog) {
-    return <h2 className="text-center mt-5">Blog Not Found</h2>;
+    return <h2 className="text-center mt-5 px-3">Blog Not Found</h2>;
   }
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-4 mt-md-5 mb-5">
+      <div className="row justify-content-center">
+        <div className="col-12 col-lg-10 col-xl-8">
 
-      <h1 className="text-info">{selectedBlog.title}</h1>
-      
-      <p className="text-light">
-        By {selectedBlog.author} | {selectedBlog.date}
-      </p>
+          <h1 className="text-info text-break">{selectedBlog.title}</h1>
 
-      <img
-        src={selectedBlog.image}
-        alt={selectedBlog.title}
-        className="img-fluid rounded mb-4"
-        style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }}
-      />
+          <p className="text-light text-break">
+            By {selectedBlog.author} | {selectedBlog.date}
+          </p>
 
-      <p>{selectedBlog.description}</p>
+          <img
+            src={selectedBlog.image}
+            alt={selectedBlog.title}
+            className="img-fluid rounded mb-4"
+            style={{
+              width: "100%",
+              aspectRatio: "16 / 9",
+              maxHeight: "400px",
+              objectFit: "cover",
+            }}
+          />
 
-      <div style={{ whiteSpace: "pre-line", lineHeight: "1.5" }}>
-        {selectedBlog.content}
+          <p>{selectedBlog.description}</p>
+
+          <div
+            className="text-break"
+            style={{
+              whiteSpace: "pre-line",
+              lineHeight: "1.8",
+              fontSize: "clamp(1rem, 0.95rem + 0.3vw, 1.125rem)",
+            }}
+          >
+            {selectedBlog.content}
+          </div>
+
+        </div>
       </div>
-
     </div>
   );
 

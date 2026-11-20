@@ -1,18 +1,146 @@
+/* =========================
+   BASE
+========================= */
+.navbar {
+  overflow-x: clip;
+}
+
+.navbar-brand {
+  min-width: 0;
+  max-width: calc(100% - 70px);
+  margin-right: 0;
+  font-size: 1.1rem;
+}
+
+.brand-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
 .nav-link {
   color: white;
+  font-size: 1.05rem;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover {
   color: #00c0ff !important;
 }
-.navbar-socials a{
-    color: white;
-    transition: color 0.2s ease;
+
+.navbar-socials {
+  gap: 22px;
 }
-.navbar-socials a:hover{
-    color: #00c0ff !important;
+
+.navbar-socials a {
+  color: white;
+  font-size: 1.25rem;
+  transition: color 0.2s ease;
 }
+
+.navbar-socials a:hover {
+  color: #00c0ff !important;
+}
+
 .navbar-collapse.collapse {
   visibility: visible;
+}
+
+/* =========================
+   MOBILE + TABLET MENU (below 992px)
+========================= */
+@media (max-width: 991.98px) {
+  .navbar-center-group {
+    padding: 12px 0 16px;
+  }
+
+  .navbar-nav {
+    gap: 2px;
+    margin-bottom: 12px;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+  }
+}
+
+/* =========================
+   SMALL (576px and up)
+========================= */
+@media (min-width: 576px) {
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================
+   LARGE (992px and up): single row
+========================= */
+@media (min-width: 992px) {
+  .navbar-brand {
+    max-width: none;
+    font-size: 1.25rem;
+  }
+
+  .navbar-nav {
+    gap: 6px;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .navbar-socials {
+    gap: 16px;
+  }
+
+  .navbar-socials a {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================
+   EXTRA LARGE (1200px and up)
+========================= */
+@media (min-width: 1200px) {
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+
+  .navbar-nav {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
+  .navbar-socials {
+    gap: 22px;
+  }
+
+  .navbar-socials a {
+    font-size: 1.2rem;
+  }
+}
+
+/* =========================
+   EXTRA EXTRA LARGE (1400px and up)
+========================= */
+@media (min-width: 1400px) {
+  .nav-link {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav {
+    gap: 16px;
+  }
 }

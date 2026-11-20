@@ -1,4 +1,3 @@
-
 /* =========================
    HOME SECTION
 ========================= */
@@ -43,8 +42,9 @@
 .heading-name {
   color: white;
   padding: 15px 0;
+  white-space: nowrap;
+  font-size: clamp(1.25rem, 2vw, 2rem);
 }
-
 .paragraph {
   color: grey;
   letter-spacing: 1px;
@@ -52,9 +52,9 @@
 
 .my-box {
   height: 100%;
-   transform: translateY(0);
-   transition: transform 0.5s ease-in-out;
-   cursor: pointer;
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .my-box:hover {
@@ -67,44 +67,22 @@
 }
 
 /* =========================
-   SVG RESPONSIVENESS
+   SVG ICONS (CENTERED)
 ========================= */
 
-.my-box svg {
-  max-width: 100%;
-  height: auto;
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-/* =========================
-   TABLET / IPAD
-========================= */
-
-@media screen and (max-width: 1024px) {
-
-  .home-section {
-    min-height: auto;
-  }
-
-  .profile-image {
-    max-width: 350px;
-    height: 350px;
-  }
-
-  .image-sections {
-    width: 100%;
-    min-height: 380px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .home-title {
-    font-size: 32px;
-  }
-
-  .home-description {
-    font-size: 16px;
-  }
+.my-box .icon-wrapper svg {
+  display: block;
+  width: 70px;
+  height: 70px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* =========================
@@ -113,26 +91,7 @@
 
 @media screen and (max-width: 576px) {
 
-  .home-section {
-    min-height: auto;
-    padding-top: 30px !important;
-    padding-bottom: 40px !important;
-  }
 
-  .profile-image {
-    max-width: 260px;
-    max-height: 260px;
-  }
-
-  .image-sections {
-    min-height: auto;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .home-title {
-    font-size: 27px;
-  }
 
   .home-description {
     font-size: 14px;
@@ -154,16 +113,105 @@
 ========================= */
 
 @media screen and (max-width: 375px) {
+   .color-picker {
+    padding: 25px 15px;
+  }
+}
+/* =========================
+   HERO SECTION
+========================= */
+
+.home-section {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hero-row {
+  width: 100%;
+}
+
+.home-title {
+  font-size: clamp(27px, 4vw, 42px);
+}
+
+/* Image: always a perfect circle */
+.profile-image {
+  display: block;
+  width: 240px;
+  height: 240px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Small phones (below 576px): image on top, text below */
+@media (max-width: 575.98px) {
+  .home-section {
+    min-height: auto;
+    padding-top: 30px !important;
+    padding-bottom: 40px !important;
+  }
 
   .profile-image {
-    max-width: 220px;
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Small (576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .home-section {
+    min-height: auto;
   }
 
-  .home-title {
-    font-size: 24px;
+  .profile-image {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* Medium (768px and up): side by side with a gap */
+@media (min-width: 768px) {
+  .home-section {
+    min-height: 70vh;
   }
 
-  .color-picker {
-    padding: 25px 15px;
+  .profile-image {
+    width: 280px;
+    height: 280px;
+  }
+
+  .text-sections {
+    padding-right: 1rem;
+  }
+}
+
+/* Large (992px and up) */
+@media (min-width: 992px) {
+  .profile-image {
+    width: 360px;
+    height: 360px;
+  }
+
+  .text-sections {
+    padding-right: 2rem;
+  }
+}
+
+/* Extra large (1200px and up) */
+@media (min-width: 1200px) {
+  .profile-image {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* Extra extra large (1400px and up) */
+@media (min-width: 1400px) {
+  .profile-image {
+    width: 440px;
+    height: 440px;
   }
 }

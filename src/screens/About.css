@@ -1,11 +1,13 @@
-
-/* About Section */
+/* =========================
+   ABOUT SECTION
+========================= */
 .about-section {
-  margin-top: 100px;
+  margin-top: 80px;
+  overflow-x: clip;
 }
 
 .content-section {
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 .about-heading {
@@ -13,16 +15,25 @@
 }
 
 .about-title {
-  font-size: 45px;
+  font-size: clamp(1.75rem, 1rem + 2.5vw, 2.8rem);
+  line-height: 1.25;
 }
 
-/* Profile Image */
+.about-text {
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
 .image-container {
   position: relative;
-  min-height: 450px;
+  min-height: 350px;
   height: 100%;
   overflow: hidden;
   border-radius: 8px;
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .profile-image1 {
@@ -35,7 +46,9 @@
   display: block;
 }
 
-/* About Information */
+/* =========================
+   ABOUT INFORMATION
+========================= */
 .about-content {
   width: 100%;
 }
@@ -43,7 +56,7 @@
 .item {
   height: 100%;
   margin: 0;
-  padding: 1.5rem;
+  padding: 1rem;
   border: 1px solid #777;
   list-style: none;
 }
@@ -56,11 +69,13 @@
   margin-bottom: 1rem;
 }
 
-/* Download CV */
+/* =========================
+   DOWNLOAD CV (custom button)
+========================= */
 .download {
   display: inline-block;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 30px;
   background-color: #3a2b71;
@@ -75,23 +90,27 @@
   transform: translateY(-3px);
 }
 
-/* Statistics */
+/* =========================
+   STATISTICS
+========================= */
 .cards {
-  margin: 150px auto;
+  margin: 70px auto;
 }
 
 .cards-h3 {
   color: aqua;
-  font-size: 40px;
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
 }
 
 .cards-h5 {
   color: white;
-  font-size: 25px;
+  font-size: clamp(1rem, 0.8rem + 1vw, 1.5625rem);
 }
 
-/* Tablet and Mobile */
-@media (max-width: 991px) {
+/* =========================
+   SMALL (576px and up)
+========================= */
+@media (min-width: 576px) {
   .content-section {
     margin-bottom: 60px;
   }
@@ -100,8 +119,12 @@
     min-height: 400px;
   }
 
-  .about-title {
-    font-size: 38px;
+  .item {
+    padding: 1.25rem;
+  }
+
+  .download {
+    font-size: 22px;
   }
 
   .cards {
@@ -109,29 +132,32 @@
   }
 }
 
-/* Small Devices */
-@media (max-width: 575px) {
+/* =========================
+   LARGE (992px and up)
+========================= */
+@media (min-width: 992px) {
   .about-section {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 
   .content-section {
-    margin-bottom: 40px;
-  }
-
-  .about-title {
-    font-size: 30px;
+    margin-bottom: 100px;
   }
 
   .image-container {
-    min-height: 350px;
+    min-height: 450px;
+    max-width: none;
+  }
+
+  .item {
+    padding: 1.5rem;
   }
 
   .download {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .cards {
-    margin: 70px auto;
+    margin: 150px auto;
   }
 }

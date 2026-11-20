@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import "./Services.css";
 import { motion } from "motion/react";
 
@@ -29,20 +29,19 @@ const staggerContainer = {
 };
 
 function Services() {
+  const [ready, setReady] = useState(false);
   return (
     <>
       {/* Services Heading */}
       <motion.div
-        className="container text-center"
+        className="container text-center px-3"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
       >
         <h4 style={{ color: "#00c0ff" }}>Services</h4>
-        <h1 style={{ fontSize: "45px" }}>
-          What I Do for My Clients
-        </h1>
+        <h1 className="section-title">What I Do for My Clients</h1>
       </motion.div>
 
       {/* Services Cards */}
@@ -53,12 +52,15 @@ function Services() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
       >
-        <motion.div
-          className="row gy-4"
-          variants={staggerContainer}
-        >
+        <motion.div className="row gy-4" variants={staggerContainer}>
           <div className="col-lg-4 col-md-6 col-12">
-            <motion.div className="card1" variants={fadeUp}>
+            <motion.div
+              className="card1"
+              variants={fadeUp}
+              onAnimationComplete={() => setReady(true)}
+              whileHover={ready ? { y: -12 } : undefined}
+              transition={{ duration: 0.5 }}
+            >
               <div>
                 <svg
                   fill="currentColor"
@@ -88,7 +90,13 @@ function Services() {
           </div>
 
           <div className="col-lg-4 col-md-6 col-12">
-            <motion.div className="card1" variants={fadeUp}>
+            <motion.div
+              className="card1"
+              variants={fadeUp}
+              onAnimationComplete={() => setReady(true)}
+              whileHover={ready ? { y: -12 } : undefined}
+              transition={{ duration: 0.5 }}
+            >
               <div>
                 <svg
                   fill="currentColor"
@@ -116,7 +124,13 @@ function Services() {
           </div>
 
           <div className="col-lg-4 col-md-6 col-12">
-            <motion.div className="card1" variants={fadeUp}>
+            <motion.div
+              className="card1"
+              variants={fadeUp}
+              onAnimationComplete={() => setReady(true)}
+              whileHover={ready ? { y: -12 } : undefined}
+              transition={{ duration: 0.5 }}
+            >
               <div>
                 <svg
                   fill="currentColor"
@@ -151,7 +165,13 @@ function Services() {
           </div>
 
           <div className="col-lg-4 col-md-6 col-12">
-            <motion.div className="card1" variants={fadeUp}>
+            <motion.div
+              className="card1"
+              variants={fadeUp}
+              onAnimationComplete={() => setReady(true)}
+              whileHover={ready ? { y: -12 } : undefined}
+              transition={{ duration: 0.5 }}
+            >
               <div>
                 <svg
                   fill="currentColor"
@@ -182,7 +202,13 @@ function Services() {
           </div>
 
           <div className="col-lg-4 col-md-6 col-12">
-            <motion.div className="card1" variants={fadeUp}>
+            <motion.div
+              className="card1"
+              variants={fadeUp}
+              onAnimationComplete={() => setReady(true)}
+              whileHover={ready ? { y: -12 } : undefined}
+              transition={{ duration: 0.5 }}
+            >
               <div>
                 <svg
                   style={{ color: "#10c4ff" }}
@@ -224,7 +250,13 @@ function Services() {
           </div>
 
           <div className="col-lg-4 col-md-6 col-12">
-            <motion.div className="card1" variants={fadeUp}>
+            <motion.div
+              className="card1"
+              variants={fadeUp}
+              onAnimationComplete={() => setReady(true)}
+              whileHover={ready ? { y: -12 } : undefined}
+              transition={{ duration: 0.5 }}
+            >
               <div>
                 <svg
                   style={{ color: "#10c4ff" }}
@@ -261,38 +293,39 @@ function Services() {
 
       {/* Experience Heading */}
       <motion.div
-        className="container text-center"
+        className="container text-center px-3"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
+        onAnimationComplete={() => setReady(true)}
+        whileHover={ready ? { y: -12 } : undefined}
+        transition={{duration: 0.5}}
       >
         <h4 style={{ color: "#00c0ff" }}>Experience</h4>
-        <h1 style={{ fontSize: "45px" }}>
-          I Worked for Some Companies
-        </h1>
+        <h1 className="section-title">I Worked for Some Companies</h1>
       </motion.div>
 
       {/* Experience and Education */}
       <section className="container py-5 text-white">
         <motion.div
-          className="row g-5"
+          className="row gy-5 gx-lg-5"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          onAnimationComplete={() => setReady(true)}
+          whileHover={ready ? { y: -12 } : undefined}
+          transition={{duration: 0.5}}
         >
           {/* Experience */}
           <motion.div
-            className="col-12 col-lg-6"
+            className="col-12 col-lg-6 text-center text-lg-start"
             variants={staggerContainer}
           >
             <h2 className="mb-4">Experience</h2>
 
-            <motion.div
-              className="timeline-item"
-              variants={fadeUp}
-            >
+            <motion.div className="timeline-item" variants={fadeUp}>
               <h3>Frontend Web Developer</h3>
               <p className="text-white-50">
                 Devicon Software House | 22, Sept, 2023 - 2, June, 2024
@@ -303,10 +336,7 @@ function Services() {
               </p>
             </motion.div>
 
-            <motion.div
-              className="timeline-item"
-              variants={fadeUp}
-            >
+            <motion.div className="timeline-item" variants={fadeUp}>
               <h3>MERN Developer</h3>
               <p className="text-white-50">
                 Uni Web Solutions | 31, October, 2026 - currently Working
@@ -319,15 +349,12 @@ function Services() {
 
           {/* Education */}
           <motion.div
-            className="col-12 col-lg-6"
+            className="col-12 col-lg-6 text-center text-lg-start"
             variants={staggerContainer}
           >
             <h2 className="mb-4">Education</h2>
 
-            <motion.div
-              className="timeline-item"
-              variants={fadeUp}
-            >
+            <motion.div className="timeline-item" variants={fadeUp}>
               <h3>BS Computer Science</h3>
               <p className="text-white-50">
                 Khwaja Fareed University of Engineering and IT | 2020–2024
@@ -339,10 +366,7 @@ function Services() {
               </p>
             </motion.div>
 
-            <motion.div
-              className="timeline-item"
-              variants={fadeUp}
-            >
+            <motion.div className="timeline-item" variants={fadeUp}>
               <h3>FSc (Pre-Engineering)</h3>
               <p className="text-white-50">
                 Govt. Postgraduate (Boys) College, Muzaffargarh | 2018–2020

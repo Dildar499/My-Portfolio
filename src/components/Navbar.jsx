@@ -26,12 +26,13 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg px-3 mb-sm-5">
       <div className="container-lg">
         <Link
-          className="navbar-brand d-flex align-items-center gap-2 text-light fs-4"
+          className="navbar-brand d-flex align-items-center gap-2 text-light"
           to="/home"
           aria-label="Home"
           onClick={closeMenu}
         >
-          <AvatarCircles avatarUrls={avatars} className="me-2" /> Dildar Hussain
+          <AvatarCircles avatarUrls={avatars} className="me-2" />
+          <span className="brand-name">Dildar Hussain</span>
         </Link>
 
         {/* Toggle Button */}
@@ -53,78 +54,54 @@ function Navbar() {
           }`}
           id="navbarContent"
         >
-          <div className="navbar-center-group d-lg-flex align-items-lg-center gap-lg-3">
-            <ul className="navbar-nav mx-lg-auto gap-lg-3">
+          <div className="navbar-center-group d-lg-flex align-items-lg-center">
+            <ul className="navbar-nav mx-lg-auto text-center text-lg-start">
               <li className="nav-item">
-                <Link
-                  className="nav-link text-light fs-5"
-                  to="/home"
-                  onClick={closeMenu}
-                >
+                <Link className="nav-link text-light" to="/home" onClick={closeMenu}>
                   Home
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link
-                  className="nav-link text-light fs-5"
-                  to="/about"
-                  onClick={closeMenu}
-                >
+                <Link className="nav-link text-light" to="/about" onClick={closeMenu}>
                   About
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link
-                  className="nav-link text-light fs-5"
-                  to="/skills"
-                  onClick={closeMenu}
-                >
+                <Link className="nav-link text-light" to="/skills" onClick={closeMenu}>
                   Skills
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link
-                  className="nav-link text-light fs-5"
-                  to="/services"
-                  onClick={closeMenu}
-                >
+                <Link className="nav-link text-light" to="/services" onClick={closeMenu}>
                   Services
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link
-                  className="nav-link text-light fs-5"
-                  to="/Blogs"
-                  onClick={closeMenu}
-                >
+                <Link className="nav-link text-light" to="/Blogs" onClick={closeMenu}>
                   Blogs
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link
-                  className="nav-link text-light fs-5"
-                  to="/contact"
-                  onClick={closeMenu}
-                >
+                <Link className="nav-link text-light" to="/contact" onClick={closeMenu}>
                   Contact
                 </Link>
               </li>
             </ul>
 
-            <span className="mx-3">|</span>
+            <span className="nav-divider d-none d-lg-inline mx-3">|</span>
 
-            <div className="navbar-socials d-flex gap-4 ms-lg-3">
+            <div className="navbar-socials d-flex justify-content-center justify-content-lg-start">
               <a
                 href="https://www.instagram.com/yoyochotenawab?hvrq=MWQzOWgwaG4zYjE2bw=="
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="text-light fs-5"
+                className="text-light"
                 onClick={closeMenu}
               >
                 <FontAwesomeIcon icon={faInstagram} />
@@ -135,7 +112,7 @@ function Navbar() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="text-light fs-5"
+                className="text-light"
                 onClick={closeMenu}
               >
                 <FontAwesomeIcon icon={faFacebook} />
@@ -146,7 +123,7 @@ function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-light fs-5"
+                className="text-light"
                 onClick={closeMenu}
               >
                 <FontAwesomeIcon icon={faLinkedin} />
@@ -157,7 +134,7 @@ function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="text-light fs-5"
+                className="text-light"
                 onClick={closeMenu}
               >
                 <FontAwesomeIcon icon={faGithub} />

@@ -1,7 +1,7 @@
-
 import { useNavigate } from "react-router-dom";
 import "./Blogs.css";
 import { motion } from "motion/react";
+import { useState } from "react";
 
 // Animation for individual elements
 const fadeUp = {
@@ -31,7 +31,7 @@ const staggerContainer = {
 
 function Blogs() {
   const navigate = useNavigate();
-
+  const [ready, setReady] = useState(false);
   const blogs = [
     {
       id: 1,
@@ -159,7 +159,7 @@ AI automation is used in businesses, web applications, customer support, data pr
     },
 
     {
-      id: 3,
+      id: 6,
       title: "Learn Bootstrap",
       description: "Build responsive websites with Bootstrap.",
       image:
@@ -188,20 +188,23 @@ Bootstrap is especially useful for quickly building responsive websites and fron
     <>
       {/* Blog Heading */}
       <motion.div
-        className="container text-center"
+        className="container text-center mt-4 mt-md-5 px-3"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
+        onAnimationComplete={() => setReady(true)}
+        whileHover={ready ? { y: -12 } : undefined}
+        transition={{ duration: 0.5 }}
       >
         <h4 style={{ color: "#00c0ff" }}>Blog</h4>
-        <h1 style={{ fontSize: "45px" }}>Latest Blog Posts</h1>
+        <h1 className="section-title">Latest Blog Posts</h1>
       </motion.div>
 
       {/* Blog Cards */}
-      <div className="container my-5">
+      <div className="container my-4 my-md-5">
         <motion.div
-          className="row"
+          className="row gy-4"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -209,30 +212,25 @@ Bootstrap is especially useful for quickly building responsive websites and fron
         >
           {blogs.map((blog, index) => (
             <div
-              className="col-md-6 col-lg-4 mx-md-auto mb-4"
+              className="col-12 col-md-6 col-lg-4"
               key={`${blog.id}-${index}`}
             >
               <motion.div
                 className="card h-100 Blog-card"
-                style={{
-                  backgroundColor: "#3a2b71",
-                  border: "none",
-                  borderRadius: "22px",
-                }}
                 variants={fadeUp}
+                onAnimationComplete={() => setReady(true)}
+                whileHover={ready ? { y: -12 } : undefined}
+                transition={{ duration: 0.5 }}
               >
                 <img
                   src={blog.image}
                   onClick={() => navigate(`/blogs/${blog.id}`)}
-                  className="card-img-top"
+                  className="card-img-top blog-img"
                   alt={blog.title}
-                  style={{
-                    height: "200px",
-                    objectFit: "cover",
-                  }}
+                  loading="lazy"
                 />
 
-                <div className="card-body">
+                <div className="card-body d-flex flex-column">
                   <h5
                     className="card-title text-info"
                     onClick={() => navigate(`/blogs/${blog.id}`)}
@@ -240,16 +238,12 @@ Bootstrap is especially useful for quickly building responsive websites and fron
                     {blog.title}
                   </h5>
 
-                  <p className="card-text text-light">
-                    {blog.description}
-                  </p>
+                  <p className="card-text text-light">{blog.description}</p>
 
-                  <p className="text-secondary">
-                    {blog.author}
-                  </p>
+                  <p className="text-secondary">{blog.author}</p>
 
                   <button
-                    className="btn btn-info"
+                    className="btn btn-info mt-auto align-self-start"
                     onClick={() => navigate(`/blogs/${blog.id}`)}
                   >
                     Read More
