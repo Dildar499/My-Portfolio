@@ -39,6 +39,10 @@ function Services() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
+        onAnimationComplete={() => setReady(true)}
+        whileHover={ready ? { y: -12 } : undefined}
+        whileTap={ready ? { y: -12 } : undefined}
+        transition={{ duration: 0.5 }}
       >
         <h4 style={{ color: "#00c0ff" }}>Services</h4>
         <h1 className="section-title">What I Do for My Clients</h1>
@@ -51,10 +55,6 @@ function Services() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
-        onAnimationComplete={() => setReady(true)}
-        whileHover={ready ? { y: -12 } : undefined}
-        whileTap={ready ? { y: -12 } : undefined}
-        transition={{ duration: 0.5 }}
       >
         <motion.div className="row gy-4" variants={staggerContainer}>
           <div className="col-lg-4 col-md-6 col-12">
