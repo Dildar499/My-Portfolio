@@ -47,7 +47,15 @@ function Home() {
             </h5>
 
             <div className="mt-4 d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
-              <InteractiveHoverButton onClick={() => navigate("/services")}>
+              <InteractiveHoverButton
+                style={{
+                  borderRadius: "20px",
+                  borderColor: "#3b82f6",
+                  borderWidth: "2px",
+                  borderStyle: "solid",
+                }}
+                onClick={() => navigate("/services")}
+              >
                 View My Work
               </InteractiveHoverButton>
             </div>
